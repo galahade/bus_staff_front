@@ -1,0 +1,18 @@
+{{#light-table table height='400vh' as |t|}}
+
+  {{t.head
+    iconAscending='fa fa-sort-asc'
+    iconDescending='fa fa-sort-desc'
+    fixed=true
+  }}
+
+  {{#t.body
+    canSelect=true
+    multiSelect=true
+    onRowDoubleClick=(action 'doubleClickRow')
+    as |body|
+  }}
+  {{/t.body}}
+
+{{/light-table}}
+

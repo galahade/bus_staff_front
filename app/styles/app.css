@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+
+
+body {
+    background: #f3f3f3;
+}
+
+a {
+    color: #2185D0;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.body {
+    padding: 50px;
+    background: #f6f6f6;
+}
+
+.show-form .title {
+    margin-bottom: 15px;
+}
+
+.show-form .detail-section {
+    width: 50%;
+    padding-left: 30px;
+}
+
+.show-form .owner {
+    margin-top: 10px;
+}
+
+.show-form .rental-pic {
+    width: 50%;
+    height: initial;
+    position: static;
+}
+
+.font1 {
+    font-size: 14px;
+}

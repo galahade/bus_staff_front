@@ -1,0 +1,16 @@
+<div class="jumbo">
+	<div>
+		<h3>过滤器</h3>
+		<fieldset>
+		<input type = "radio" name = "filterDriver" class="light" onclick={{action "showA1A3"}}/>
+		<label>显示合格驾驶员</label>
+		<br>
+		<input type = "radio" name = "filterDriver" class="light" onclick={{action "showIsInternship"}}/>
+		<label>显示实习驾驶员</label>
+		<br>
+		</fieldset>
+	</div>
+	<div>
+	{{yield results}}
+	</div>
+</div>
