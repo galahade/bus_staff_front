@@ -33,8 +33,7 @@ export default Ember.Component.extend({
   }),
   actions: {
     doubleClickRow(row) {
-      this.get('router').replaceWith('buses.show',row.content.license);
-     
+      this.get('router').replaceWith('buses.show',row.content.id);
     }
   }
 });

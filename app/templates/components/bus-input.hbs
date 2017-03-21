@@ -1,27 +1,32 @@
 <div class="body show-form">
 	<h3>输入车辆信息</h3><br>
 	<form method="post" action="http://localhost:8000/buses" {{action "postBus" on="submit"}}>
-		<label class="title font1"><strong>牌照号：</strong></label>{{input name="license" value=model.license class="font1" size=15}}
+		<label class="title font1"><strong>牌照号：</strong></label>{{input readonly=readonly value=model.license class="font1" size=15}}
 		&nbsp;&nbsp;
-		<label class="title font1"><strong>自定义编号：</strong></label>{{input name="customID" value=model.customID class="font1" size=15}}<br>
+		<label class="title font1"><strong>自定义编号：</strong></label>{{input readonly=readonly value=model.customID class="font1" size=15}}<br>
 		<label class="title font1"><strong>品&nbsp;&nbsp;&nbsp;牌：</strong></label>
-		{{#power-select options=brands selected=destination 
+		{{#power-select options=brands selected=destination disabled=readonly
 			searchField="model"
 			onchange=(action "chooseDestination") as |brand|}}
   			{{brand.alias}}---{{brand.model}}
 		{{/power-select}}
 		<br>
-		<label class="title font1"><strong>核载人数：</strong></label>{{input name="personsCapacity" value=model.personsCapacity class="font1" size=15}}
+		<label class="title font1"><strong>核载人数：</strong></label>{{input readonly=readonly value=model.personsCapacity class="font1" size=15}}
 		<label class="title font1"><strong>生产时间：</strong></label>
-		{{date-picker name="productionDate" date=model.registerDate valueFormat='YYYY-MM-DD'}}
+		{{date-picker readonly=readonly date=model.registerDate valueFormat='YYYY-MM-DD'}}
 		<br>
 		<br>
-		<label class="title font1"><strong>车辆识别代码：</strong></label>{{input name="vin" value=model.vin class="font1" size=15}}
+		<label class="title font1"><strong>车辆识别代码：</strong></label>{{input readonly=readonly value=model.vin class="font1" size=15}}
 		&nbsp;&nbsp;
-		<label class="title font1"><strong>发动机号：</strong></label>{{input name="engineNo" value=model.engineNo class="font1" size=15}}
+		<label class="title font1"><strong>发动机号：</strong></label>{{input readonly=readonly value=model.engineNo class="font1" size=15}}
 		<br>
-		<button class="button" type="submit">提交</button>
-		<button class="button" {{action "cancel"}}>取消</button>
+		{{#if readonly}}
+			<button class="button" {{action "changeEditable"}}>编辑</button>
+		{{/if}}
+		{{#unless readonly}}
+			<button class="button" type="submit">提交</button>
+			<button class="button" {{action "cancel"}}>取消</button>
+		{{/unless}}
 	</form>
 </div>
 {{yield}}
