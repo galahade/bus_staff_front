@@ -12,6 +12,7 @@ Router.map(function() {
   });
   this.route('buses', function() {
     this.route('show', {path: '/:license'});
+    this.route('create-bus');
   });
 });
 

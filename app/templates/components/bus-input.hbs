@@ -4,9 +4,22 @@
 		<label class="title font1"><strong>牌照号：</strong></label>{{input name="license" value=model.license class="font1" size=15}}
 		&nbsp;&nbsp;
 		<label class="title font1"><strong>自定义编号：</strong></label>{{input name="customID" value=model.customID class="font1" size=15}}<br>
-		<label class="title font1"><strong>品&nbsp;&nbsp;&nbsp;牌：</strong></label>{{input name="brand" value=model.brand class="font1" size=15}}&nbsp;&nbsp;&nbsp;&nbsp;
+		<label class="title font1"><strong>品&nbsp;&nbsp;&nbsp;牌：</strong></label>
+		{{#power-select options=brands selected=destination 
+			searchField="model"
+			onchange=(action "chooseDestination") as |brand|}}
+  			{{brand.alias}}---{{brand.model}}
+		{{/power-select}}
+		<br>
+		<label class="title font1"><strong>核载人数：</strong></label>{{input name="personsCapacity" value=model.personsCapacity class="font1" size=15}}
 		<label class="title font1"><strong>生产时间：</strong></label>
-		{{date-picker name="productionDate" date=model.productionDate valueFormat='YYYY-MM-DD'}}<br><br>
+		{{date-picker name="productionDate" date=model.registerDate valueFormat='YYYY-MM-DD'}}
+		<br>
+		<br>
+		<label class="title font1"><strong>车辆识别代码：</strong></label>{{input name="vin" value=model.vin class="font1" size=15}}
+		&nbsp;&nbsp;
+		<label class="title font1"><strong>发动机号：</strong></label>{{input name="engineNo" value=model.engineNo class="font1" size=15}}
+		<br>
 		<button class="button" type="submit">提交</button>
 		<button class="button" {{action "cancel"}}>取消</button>
 	</form>

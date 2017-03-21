@@ -1,4 +1,4 @@
-{{bus-input callback=(action 'doRefresh') model=model}} 
-{{bus-table data=datasource}}
+{{#link-to "buses.create-bus"}}建立新车辆信息{{/link-to}}<br>
 
+{{bus-table data=model}}
 {{outlet}}

@@ -2,8 +2,7 @@ import Ember from 'ember';
 import Table from 'ember-light-table';
 
 const {
-  computed,
-  inject
+  computed
 } = Ember;
 
 export default Ember.Component.extend({
@@ -21,11 +20,11 @@ export default Ember.Component.extend({
       width: '100px'
     }, {
       label: '品牌',
-      valuePath: 'brand',
+      valuePath: 'brandAlias',
       width: '100px'
     }, {
       label: '生产日期',
-      valuePath: 'productionDate',
+      valuePath: 'registerDate',
       width: '100px'
     }];
   }),
