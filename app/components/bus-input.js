@@ -47,7 +47,7 @@ export default Ember.Component.extend({
     		if (this.get("model").id == null) {
     			this.get("model").deleteRecord();
     		} else {
-    			this.get("model").rollbackAttributes()
+    			this.get("model").rollbackAttributes();
     		}
     		this.get("goBack")();
     	}
