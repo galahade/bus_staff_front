@@ -15,7 +15,7 @@ export default Ember.Component.extend({
       width: '100px',
 //      sortable: false,
     }, {
-      label: '自定义编号',
+      label: '编号',
       valuePath: 'customID',
       width: '100px'
     }, {
@@ -29,15 +29,15 @@ export default Ember.Component.extend({
     }, {
       label: '车辆识别代码',
       valuePath: 'vin',
-      width: '100px'
+      width: '180px'
     }, {
       label: '发动机号',
       valuePath: 'engineNo',
-      width: '100px'
+      width: '180px'
     }, {
       label: '核载人数',
       valuePath: 'personsCapacity',
-      width: '100px'
+      width: '30px'
     }];
   }),
   table: computed('data', function(){
