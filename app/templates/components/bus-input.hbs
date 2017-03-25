@@ -1,5 +1,8 @@
 <div class="body show-form">
 	<h3>输入车辆信息</h3><br>
+	{{#if readonly}}
+		{{#link-to "buses" replace=true}}返回公交汇总页{{/link-to}}<br>
+	{{/if}}
 	<form method="post" action="http://localhost:8000/buses" {{action "postBus" on="submit"}}>
 		<label class="title font1"><strong>牌照号：</strong></label>{{input readonly=readonly value=model.license class="font1" size=15}}
 		&nbsp;&nbsp;
@@ -13,7 +16,12 @@
 		<br>
 		<label class="title font1"><strong>核载人数：</strong></label>{{input readonly=readonly value=model.personsCapacity class="font1" size=15}}
 		<label class="title font1"><strong>生产时间：</strong></label>
-		{{date-picker readonly=readonly date=model.registerDate valueFormat='YYYY-MM-DD'}}
+		{{#if readonly}}
+			{{input readonly=readonly value=model.registerDate class="font1" size=15}}
+		{{/if}}
+		{{#unless readonly}}
+			{{date-picker date=model.registerDate valueFormat='YYYY-MM-DD'}}
+		{{/unless}}
 		<br>
 		<br>
 		<label class="title font1"><strong>车辆识别代码：</strong></label>{{input readonly=readonly value=model.vin class="font1" size=15}}

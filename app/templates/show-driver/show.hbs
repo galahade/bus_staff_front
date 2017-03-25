@@ -11,12 +11,12 @@
 		
 		<label class="title font1"><strong>驾照类型：</strong></label>{{input name="driverType" class="font1" readonly=readonly size=10 value=model.driverType}}<br>
 		<label class="title font1"><strong>是否在实习期：</strong></label>
-		{{radio-button value=true name = "isInternship" checked=model.isInternship}}是
-		{{radio-button value=false name = "isInternship" checked=model.isInternship}}否
+		{{radio-button value=true checked=model.isInternship}}是
+		{{radio-button value=false checked=model.isInternship}}否
 		<br>
 		<label class="title font1"><strong>是否多次入职：</strong></label>
-		{{radio-button value=true name = "isMultitimeHired" checked=model.isMultitimeHired}}是
-		{{radio-button value=false name = "isMultitimeHired" checked=model.isMultitimeHired}}否
+		{{radio-button value=true checked=model.isMultitimeHired}}是
+		{{radio-button value=false checked=model.isMultitimeHired}}否
 		<br>
 		<label class="title font1"><strong>电话：</strong></label>{{input type="telephone" name="phone" class="font1" readonly=readonly size=15 value=model.phone}}<br>
 		<label class="title font1"><strong>首次入职时间：</strong></label>

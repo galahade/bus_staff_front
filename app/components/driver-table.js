@@ -1,5 +1,4 @@
 import Ember from 'ember';
-//import TableCommon from '../mixins/table-common';
 import Table from 'ember-light-table';
 
 const {
@@ -72,7 +71,7 @@ export default Ember.Component.extend({
     }];
   }),
   table: computed('data', function(){
-    return new Table(this.get('columns'), this.get('data'), { enableSync: this.get(true) });
+    return new Table(this.get('columns'), this.get('data'), { enableSync: true });
   }),
   actions: {
     doubleClickRow(row) {

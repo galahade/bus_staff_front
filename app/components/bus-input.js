@@ -21,8 +21,8 @@ export default Ember.Component.extend({
       			this.set('destination', results.get("firstObject"));
       			this.get("model").brandID = this.get('destination').id;
       		}else {
-      			results.forEach((brand, index) => {
-      				if (brand.id == this.get("model").get("brandID")) {
+      			results.forEach((brand) => {
+      				if (brand.id === this.get("model").get("brandID")) {
       		  			this.set('destination', brand);
       				}
 				});
@@ -44,6 +44,11 @@ export default Ember.Component.extend({
 			this.toggleProperty('readonly');
 		},
     	cancel() {
+    		if (this.get("model").id == null) {
+    			this.get("model").deleteRecord();
+    		} else {
+    			this.get("model").rollbackAttributes()
+    		}
     		this.get("goBack")();
     	}
 	}

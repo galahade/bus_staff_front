@@ -23,8 +23,20 @@ export default Ember.Component.extend({
       valuePath: 'brandAlias',
       width: '100px'
     }, {
-      label: '生产日期',
+      label: '注册日期',
       valuePath: 'registerDate',
+      width: '100px'
+    }, {
+      label: '车辆识别代码',
+      valuePath: 'vin',
+      width: '100px'
+    }, {
+      label: '发动机号',
+      valuePath: 'engineNo',
+      width: '100px'
+    }, {
+      label: '核载人数',
+      valuePath: 'personsCapacity',
       width: '100px'
     }];
   }),
