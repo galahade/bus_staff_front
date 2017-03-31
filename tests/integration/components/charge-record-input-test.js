@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('driver-table', 'Integration | Component | driver table', {
+moduleForComponent('charge-record-input', 'Integration | Component | charge record input', {
   integration: true
 });
 
@@ -10,15 +10,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{driver-table}}`);
+  this.render(hbs`{{charge-record-input}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#driver-table}}
+    {{#charge-record-input}}
       template block text
-    {{/driver-table}}
+    {{/charge-record-input}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

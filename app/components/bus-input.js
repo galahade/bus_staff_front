@@ -40,16 +40,16 @@ export default Ember.Component.extend({
       		this.set('destination', brand);
       		this.get("model").brandID = brand.id;
     	},
-    	changeEditable() {
+    changeEditable() {
 			this.toggleProperty('readonly');
 		},
-    	cancel() {
+    cancel() {
     		if (this.get("model").id == null) {
     			this.get("model").deleteRecord();
     		} else {
     			this.get("model").rollbackAttributes();
     		}
     		this.get("goBack")();
-    	}
+    }
 	}
 });

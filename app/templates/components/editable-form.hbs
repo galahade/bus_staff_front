@@ -1,0 +1,17 @@
+
+<div class="body show-form">
+{{#link-to backURL}}返回汇总页{{/link-to}}<br>
+	<h3>{{title}}</h3>
+	<form {{action "post" on="submit"}}>
+		{{yield}}
+		<br>
+		{{#if readonly}}
+			<button class="button" {{action "changeEditable"}}>编辑</button>
+		{{/if}}
+		{{#unless readonly}}
+			<button class="button" type="submit">提交</button>
+			<button class="button" {{action "cancel"}}>取消</button>
+		{{/unless}}
+	</form>
+</div>
+{{outlet}}

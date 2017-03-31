@@ -7,12 +7,17 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('show-driver', function() {
+  this.route('driver', function() {
     this.route('show', {path: '/:id'});
   });
   this.route('buses', function() {
-    this.route('show', {path: '/:license'});
+    this.route('show', {path: '/:id'});
     this.route('create-bus');
+  });
+
+  this.route('charge-record', function() {
+    this.route('show', {path: '/:id'});
+    this.route('create');
   });
 });
 

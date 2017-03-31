@@ -1,19 +1,18 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	Id: DS.attr(),
-	Name: DS.attr(),
-	StaffId: DS.attr(),
-	JobType: DS.attr(),
-	OnboardTime: DS.attr(),
-	PersonalID: DS.attr(),
-	DriverType: DS.attr(),
-	IsInternship: DS.attr('boolean'),
-	IsMultiTimeHired: DS.attr('boolean'),
-	FirstOnboardTime: DS.attr(),
-	Phone: DS.attr(),
-	Department: DS.attr(),
-	EmergencyContact: DS.attr(),
-	EmergencyContactPhone: DS.attr(),
-	EmergencyContactRelation: DS.attr(),
+	name: DS.attr(),
+	sid: DS.attr(),
+	jobType: DS.attr(),
+	onboardTime: DS.attr(),
+	personalID: DS.attr(),
+	driverType: DS.attr(),
+	isInternship: DS.attr('boolean'),
+	isMultitimeHired: DS.attr('boolean'),
+	firstOnboardTime: DS.attr(),
+	phone: DS.attr(),
+	department: DS.attr(),
+	emergencyContact: DS.attr(),
+	emergencyContactPhone: DS.attr(),
+	emergencyContactRelation: DS.attr()
 });

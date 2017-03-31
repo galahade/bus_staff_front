@@ -1,0 +1,26 @@
+<label class="title font1"><strong>车辆：</strong></label>
+{{#power-select options=buses selected=des_bus disabled=readonly
+	searchField="license"
+	onchange=(action "chooseBusDestination") as |bus|}}
+		{{bus.license}}
+{{/power-select}}
+<label class="title font1"><strong>剩余电量百分比：</strong></label>{{input readonly=readonly value=model.remainPercent class="font1" size=15}}&nbsp;&nbsp;
+<label class="title font1"><strong>最终电量百分比：</strong></label>{{input readonly=readonly value=model.finalPercent class="font1" size=15}}<br>
+<label class="title font1"><strong>充电度数（TWH）：</strong></label>{{input readonly=readonly value=model.chargedTWH class="font1" size=15}}&nbsp;&nbsp;
+<label class="title font1"><strong>行驶总里程：</strong></label>{{input readonly=readonly value=model.mileage class="font1" size=15}}<br>
+<label class="title font1"><strong>充电记录日期：</strong></label>
+{{#if readonly}}
+	{{input readonly=readonly value=model.recordDate class="font1" size=15}}
+{{/if}}
+{{#unless readonly}}
+	{{date-picker date=model.recordDate valueFormat='YYYY-MM-DD'}}
+{{/unless}}
+<br>
+<label class="title font1"><strong>记录司机：</strong></label>
+{{#power-select options=drivers selected=destination disabled=readonly
+	searchField="sid"
+	onchange=(action "chooseDestination") as |driver|}}
+		{{driver.sid}}-{{driver.name}}
+{{/power-select}}
+<br>
+

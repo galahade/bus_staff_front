@@ -1,4 +1,4 @@
 {{#driver-filter results as |drivers|}}
-	{{driver-table data=drivers}}
+{{data-table data=drivers columns=columns call=(action 'callback')}}
 {{/driver-filter}}
 {{outlet}}
