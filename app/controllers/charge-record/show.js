@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
 	readonly: true,
 	actions: {
 		doRefresh: function () {
-	 			this.transitionToRoute(this.get('backURL'));
-	   		}
+			this.transitionToRoute(this.get('backURL'), { queryParams: { busID: this.model.get("bus").get("id") }});
+	   	}
    	}
 });
