@@ -5,6 +5,18 @@ const {
 } = Ember;
 
 export default Ember.Controller.extend({
+	queryParams: ['busID'],
+  	busID: null,
+  	data: computed('busID', 'model', function() {
+	    let busID = this.get('busID');
+	    let chargeRecord = this.get('model');
+
+	    if (busID) {
+	      return chargeRecord.filterBy('bus.id', busID);
+	    } else {
+	      return chargeRecord;
+	    }
+  	}),
 	columns: computed(function() {
 	    return [{
 	      label: '记录日期',
