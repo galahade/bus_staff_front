@@ -49,7 +49,6 @@ export default Ember.Controller.extend({
   	actions: {
 	    callback(row) {
 			this.replaceRoute('charge-record.show',row.content.id);
-
 		}
   	}
 });

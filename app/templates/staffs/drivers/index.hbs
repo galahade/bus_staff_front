@@ -1,0 +1,4 @@
+{{#driver-filter results=model as |staffs|}}
+	{{data-table data=staffs columns=columns call=(action 'callback')}}
+{{/driver-filter}}
+{{outlet}}

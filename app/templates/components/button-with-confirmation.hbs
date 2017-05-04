@@ -1,7 +1,7 @@
 <button class="button" {{action "launchConfirmDialog"}}>{{text}}</button>
 {{#if confirmShown}}
 	<div class="confirm-dialog">
-	{{yield confirmValue}}
+	{{yield}}
 		<button class="confirm-submit button" {{action "submitConfirm"}}>OK</button>
 		<button class="confirm-cancel button" {{action "cancelConfirm"}}>Cancel</button>
 	</div>

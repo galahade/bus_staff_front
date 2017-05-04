@@ -7,10 +7,6 @@ const {
 export default Ember.Controller.extend({
 	columns: computed(function() {
 	    return [{
-	      label: '编号',
-	      valuePath: 'sid',
-	      width: '50px',
-	    }, {
 	      label: '姓名',
 	      valuePath: 'name',
 	      width: '60px'
@@ -26,22 +22,6 @@ export default Ember.Controller.extend({
 	      label: '身份证号',
 	      valuePath: 'personalID',
 	      width: '160px'
-	    }, {
-	      label: '驾照',
-	      valuePath: 'driverType',
-	      width: '50px'
-	    },{
-	      label: '实习期',
-	      valuePath: 'isInternship',
-	      width: '50px'
-	    }, {
-	      label: '多次入职',
-	      valuePath: 'isMultitimeHired',
-	      width: '80px'
-	    }, {
-	      label: '首次入职',
-	      valuePath: 'firstOnboardTime',
-	      width: '90px'
 	    }, {
 	      label: '电话',
 	      valuePath: 'phone',
@@ -66,7 +46,7 @@ export default Ember.Controller.extend({
   }),
 	actions: {
     	callback(row) {
-			this.replaceRoute('driver.show',row.content.id);
+			this.replaceRoute('staffs.show',row.content.id);
 		}
 	}
 });
