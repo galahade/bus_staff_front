@@ -16,9 +16,10 @@ export default Ember.Component.extend({
 			}).then((results) => this.set('results', results));
 		},
 		showIsInternship() {
-			let dirvers = this.get('results');
-			let filtedDriver = dirvers.filterBy('isInternship', true);
-			this.set('results', filtedDriver);
+			this.get('store').query('staff', {
+				driverType: 'isInternship',
+				type: 'driver'
+			}).then((results) => this.set('results', results));
 		}
 	}
 });

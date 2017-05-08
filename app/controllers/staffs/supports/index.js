@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 	      width: '60px'
 	    }, {
 	      label: '工种',
-	      valuePath: 'jobType',
+	      valuePath: 'jobType.name',
 	      width: '50px'
 	    }, {
 	      label: '入职时间',
@@ -28,7 +28,7 @@ export default Ember.Controller.extend({
 	      width: '100px'
 	    }, {
 	      label: '部门',
-	      valuePath: 'department',
+	      valuePath: 'department.name',
 	      width: '50px'
 	    }, {
 	      label: '联系人',
